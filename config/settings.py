@@ -153,3 +153,5 @@ SIMPLE_JWT = {
     "TOKEN_TYPE_CLAIM": "typ",
     "SIGNING_KEY": SECRET_KEY,
 }
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
