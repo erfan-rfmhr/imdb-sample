@@ -38,4 +38,5 @@ urlpatterns = [
         name="redoc",
     ),
     path('api/', include('movies.urls')),
+    path('api/', include('analytics.urls')),
 ]
