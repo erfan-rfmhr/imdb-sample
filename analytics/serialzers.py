@@ -1,5 +1,7 @@
-from .models import Rate
 from rest_framework import serializers
+
+from .models import Rate
+
 
 class RateCreateSerializer(serializers.ModelSerializer):
     score = serializers.IntegerField(min_value=1, max_value=10)
@@ -9,10 +11,10 @@ class RateCreateSerializer(serializers.ModelSerializer):
         model = Rate
         fields = ['id', 'score', 'movie', 'user', 'created_at', 'updated_at']
         read_only_fields = ['created_at', 'updated_at']
-        
+
     def create(self, validated_data):
         rate = super().create(validated_data)
-        
+
         movie_owner = rate.movie.user
         movie_owner.notify_new_rate(rate)
         return rate

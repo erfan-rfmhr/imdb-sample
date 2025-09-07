@@ -1,6 +1,8 @@
 import django_filters.rest_framework as filters
-from .models import Movie
 from rest_framework.filters import SearchFilter
+
+from .models import Movie
+
 
 class MovieFilter(filters.FilterSet):
     release_date = filters.DateFromToRangeFilter()

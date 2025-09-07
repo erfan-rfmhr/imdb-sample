@@ -1,8 +1,10 @@
+from django_filters.rest_framework.backends import DjangoFilterBackend
 from rest_framework.viewsets import ModelViewSet
+
+from .filters import MovieFilter, MovieSearchFilter
 from .models import Movie
 from .serializers import MovieSerializer
-from .filters import MovieFilter, MovieSearchFilter
-from django_filters.rest_framework.backends import DjangoFilterBackend
+
 
 class MovieViewSet(ModelViewSet):
     queryset = Movie.objects.all()

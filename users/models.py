@@ -10,5 +10,5 @@ class User(AbstractUser):
             f"Score: {rate.score}",
             "imdb@example.com",
             [self.email],
-            fail_silently=False, 
+            fail_silently=False,
         )
