@@ -1,4 +1,4 @@
-from .serialzers import RateSerializer
+from .serialzers import RateSerializer, RateCreateSerializer
 from .models import Rate
 from rest_framework import viewsets
 from rest_framework.filters import OrderingFilter
@@ -10,3 +10,8 @@ class RateViewSet(viewsets.ModelViewSet):
     serializer_class = RateSerializer
     filter_backends = [OrderingFilter]
     ordering_fields = ['score',]
+    
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return RateCreateSerializer
+        return super().get_serializer_class()
