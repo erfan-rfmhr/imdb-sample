@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'djoser',
     'drf_spectacular',
+    'django_filters',
     'users',
     'movies',
-    'django_filters',
+    'analytics',
 ]
 
 REST_FRAMEWORK = {
